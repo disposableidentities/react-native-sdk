@@ -1,6 +1,6 @@
 # A React Native SDK for Disposable ID
 
-## Method specification
+## Abstract Method Specification
 
 ### Identity
 (TODO Jef)
@@ -11,3 +11,13 @@
 ### AI
 (TODO ?)
 
+## React Native Method Specification
+
+### Identity
+(TODO ?)
+
+### Barcode/markers
+(TODO ?)
+
+### AI
+(TODO ?)

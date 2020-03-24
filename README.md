@@ -13,6 +13,9 @@ This is a one-time operation (should be invoked only once).
 
 This creates a wallet chain - depth=2 - from the Disposable Identity Wallet account and uses the public key as "method-specific-id" (as defined in https://www.w3.org/TR/did-core/#did-syntax) and uses the "method-name" *"disposable:D2"*.
 
+Example (input):
+(todo)
+
 Example (output):
 ```
 "did:disposable:D2:1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2"
@@ -26,6 +29,7 @@ Direct link to an example from that W3C spec: https://www.w3.org/TR/did-core/#re
 #### createDisposableDID
 
 This creates a address - depth=3 - from a Main DID where this address is used as "method-specific-id" for the Disposable DID and the "method-name" is *"disposable:D3"*.
+
 The "input" for this method is a Main DID (see previous).
 
 Example (output):
@@ -40,6 +44,8 @@ Example (output):
 #### generateDataVerifiableCredential
 (TODO)
 #### generateConsentVerifiableCredential
+(TODO)
+#### createVerifiableCredentialsPackage
 (TODO)
 
 ### Barcode/markers

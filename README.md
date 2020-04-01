@@ -36,9 +36,11 @@ Example (output):
 ```
 Next to creation of a Main DID, this method also:
 * creates a DID Document, formatted according to https://www.w3.org/TR/did-core/). Direct link to an example from that W3C spec: https://www.w3.org/TR/did-core/#real-world-example. (TODO later to define exactly how a Disposable DID Document will be formatted)
-* saves the DID Document in the in-app key store
-* saves the DID Document in the remote document stores
-* add the DID Document (hash) to the account chain
+* saves the DID Document in the account in-app key store
+* saves the DID Document in the account remote document stores
+* add the DID Document hash to the account chain
+* saves the hash in the account in-app key store
+* saves the hash in the account remote document stores
 
 #### createDisposableID
 
@@ -55,17 +57,27 @@ Example (output):
 ```
 Next to creation of the Disposable ID, this method also:
 * creates the coconut credential proof JSON document
-* stores this coconut credential proof JSON document in in-app document store
-* stores this coconut credential proof JSON document the remote document stores
+* stores this coconut credential proof JSON document in the account in-app document store
+* stores this coconut credential proof JSON document the account remote document stores
 
 Important note: A Disposable ID and coconut credential proof JSON document are not added to a chain.
 
-#### verifyDisposableID
+#### createDisposableDataExchangeChannel
+(TODO)
+#### closeDisposableDataExchangeChannel
+(TODO)
+#### reopenDisposableDataExchangeChannel
+(TODO)
+#### verifyDisposableIDViaDataExchangeChannel
 (TODO: But can only be done in a P2P message/channel between a requester that received the Disposable ID and the submitter/creator.)
 
 #### getDIDDocumentbyDID
 (TODO)
 #### verifyDID
+(TODO)
+#### getHashByDID
+(TODO)
+#### getDIDDocumentByHash
 (TODO)
 
 #### generateDataVerifiableCredential
@@ -74,9 +86,14 @@ Important note: A Disposable ID and coconut credential proof JSON document are n
 (TODO)
 #### createVerifiableCredentialsPackage
 (TODO)
-
-#### deleteDataVerifiableCredential
+#### shareVerifiableCredentialsPackageViaDataExchangeChannel
 (TODO)
+#### deleteDataVerifiableCredentialViaDataExchangeChannel
+(TODO)
+#### updateDataVerifiableCredentialStatus
+(todo)
+
+
 
 ### Barcode/markers
 (TODO Jari)

@@ -1,4 +1,4 @@
-# A React Native SDK for Disposable ID
+# A Mobile SDK for Disposable ID
 
 ## Abstract Method Specification
 
@@ -6,46 +6,76 @@
 
 #### initializeDisposableIdentityAccount
 
-This creates a Hierarchical Deterministic Wallet account - depth=1 - from a master node - depth=0 - from a master seed (cfr. https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki) for a **Disposable Identity Wallet**.
+This creates a key account for a **Disposable Identity Wallet**.
 This is a one-time operation (should be invoked only once).
+
+Next to account creation, this method also:
+* creates a an in-app key store
+* creates x amount remote private key stores (for backup)
+* saves the keys in the in-app key store
+* saves the keys in the remote private key stores
+* creates an in-app document store
+* creates a chain for this account
+* creates x amount remote document stores linked to the account chain
+
+#### provideKeysToCustodians
+(TODO)
 
 #### createMainDID
 
-This creates a wallet chain - depth=2 - from the Disposable Identity Wallet account and uses the public key as "method-specific-id" (as defined in https://www.w3.org/TR/did-core/#did-syntax) and uses the "method-name" *"disposable:D2"*.
+This creates a public key from an Identity Wallet account and uses the public key as "method-specific-id" (as defined in https://www.w3.org/TR/did-core/#did-syntax) and uses the "method-name" *"disposable:mainDID"*.
 
 Example (input):
-(todo)
+```
+"1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2"
+```
 
 Example (output):
 ```
-"did:disposable:D2:1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2"
+"did:disposable:mainDID:1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2"
 ```
+Next to creation of a Main DID, this method also:
+* creates a DID Document, formatted according to https://www.w3.org/TR/did-core/). Direct link to an example from that W3C spec: https://www.w3.org/TR/did-core/#real-world-example. (TODO later to define exactly how a Disposable DID Document will be formatted)
+* saves the DID Document in the in-app key store
+* saves the DID Document in the remote document stores
+* add the DID Document (hash) to the account chain
 
-The same method also creates a DID Document, formatted according to https://www.w3.org/TR/did-core/).
-Direct link to an example from that W3C spec: https://www.w3.org/TR/did-core/#real-world-example
+#### createDisposableID
 
-(TODO later to define exactly how a Disposable DID Document will be formatted)
+This creates a coconut credential from a main DID to be used as Disposable ID with  "method-name" *"disposable:ID"*.
 
-#### createDisposableDID
-
-This creates a address - depth=3 - from a Main DID where this address is used as "method-specific-id" for the Disposable DID and the "method-name" is *"disposable:D3"*.
-
-The "input" for this method is a Main DID (see previous).
+Example (input):
+```
+"did:disposable:mainDID:1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2"
+```
 
 Example (output):
 ```
-"did:disposable:D3:12eMAv9Di2H9VaNjZX2sNwPFbe7TT4KX1a"
+"did:disposable:ID:12eMAv9Di2H9VaNjZX2sNwPFbe7TT4KX1a"
 ```
+Next to creation of the Disposable ID, this method also:
+* creates the coconut credential proof JSON document
+* stores this coconut credential proof JSON document in in-app document store
+* stores this coconut credential proof JSON document the remote document stores
 
-#### getDIDDocument
+Important note: A Disposable ID and coconut credential proof JSON document are not added to a chain.
+
+#### verifyDisposableID
+(TODO: But can only be done in a P2P message/channel between a requester that received the Disposable ID and the submitter/creator.)
+
+#### getDIDDocumentbyDID
 (TODO)
-#### deleteDisposableDID
+#### verifyDID
 (TODO)
+
 #### generateDataVerifiableCredential
 (TODO)
 #### generateConsentVerifiableCredential
 (TODO)
 #### createVerifiableCredentialsPackage
+(TODO)
+
+#### deleteDataVerifiableCredential
 (TODO)
 
 ### Barcode/markers

@@ -1,8 +1,6 @@
-# A Mobile SDK for Disposable ID
+# Abstract Method Specification for Mobile SDK for Disposable ID
 
-## Abstract Method Specification
-
-### Identity
+## Identity
 
 #### initializeDisposableIdentityAccount
 
@@ -102,19 +100,8 @@ Important note: A Disposable ID and coconut credential proof JSON document are n
 (TODO)
 
 
-### Barcode/markers
+## Barcode/markers
 (TODO Jari)
 
-### AI
-(TODO ?)
-
-## React Native Method Specification
-
-### Identity
-(TODO ?)
-
-### Barcode/markers
-(TODO ?)
-
-### AI
+## AI
 (TODO ?)

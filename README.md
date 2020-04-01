@@ -18,9 +18,6 @@ Next to account creation, this method also:
 * creates a chain for this account
 * creates x amount remote document stores linked to the account chain
 
-#### provideKeysToCustodians
-(TODO)
-
 #### createMainDID
 
 This creates a public key from an Identity Wallet account and uses the public key as "method-specific-id" (as defined in https://www.w3.org/TR/did-core/#did-syntax) and uses the "method-name" *"disposable:mainDID"*.
@@ -29,7 +26,6 @@ Example (input):
 ```
 "1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2"
 ```
-
 Example (output):
 ```
 "did:disposable:mainDID:1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2"
@@ -50,7 +46,6 @@ Example (input):
 ```
 "did:disposable:mainDID:1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2"
 ```
-
 Example (output):
 ```
 "did:disposable:ID:12eMAv9Di2H9VaNjZX2sNwPFbe7TT4KX1a"
@@ -68,8 +63,9 @@ Important note: A Disposable ID and coconut credential proof JSON document are n
 (TODO)
 #### reopenDisposableDataExchangeChannel
 (TODO)
+
 #### verifyDisposableIDViaDataExchangeChannel
-(TODO: But can only be done in a P2P message/channel between a requester that received the Disposable ID and the submitter/creator.)
+(TODO)
 
 #### getDIDDocumentbyDID
 (TODO)
@@ -79,6 +75,8 @@ Important note: A Disposable ID and coconut credential proof JSON document are n
 (TODO)
 #### getDIDDocumentByHash
 (TODO)
+
+
 
 #### generateDataVerifiableCredential
 (TODO)
@@ -91,8 +89,17 @@ Important note: A Disposable ID and coconut credential proof JSON document are n
 #### deleteDataVerifiableCredentialViaDataExchangeChannel
 (TODO)
 #### updateDataVerifiableCredentialStatus
-(todo)
+(TODO)
 
+#### sendVerifiableCredentialRequestToExternalIssuerViaDataExchangeChannel
+(TODO)
+#### receiveVerifiableCredentialFromExternalIssuerViaDataExchangeChannel
+(TODO)
+#### showVeriableCredentialViaDataExchangeChannel
+(TODO)
+
+#### provideKeysToCustodians
+(TODO)
 
 
 ### Barcode/markers

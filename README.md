@@ -2,6 +2,8 @@
 
 ## Identity
 
+### Identity Basics
+
 #### initializeDisposableIdentityAccount
 
 This creates a key account for a **Disposable Identity Wallet**.
@@ -51,30 +53,18 @@ Example (output):
 Next to creation of the Disposable ID, this method also:
 * creates the coconut credential proof JSON document
 * stores this coconut credential proof JSON document in the account in-app document store
-* stores this coconut credential proof JSON document the account remote document stores
+* stores this coconut credential proof JSON document in the account remote document stores
 
-Important note: A Disposable ID and coconut credential proof JSON document are not added to a chain.
-
-#### createDisposableDataExchangeChannel
-(TODO)
-#### closeDisposableDataExchangeChannel
-(TODO)
-#### reopenDisposableDataExchangeChannel
+#### createPeerDID
 (TODO)
 
-#### verifyDisposableIDViaDataExchangeChannel
+#### proofDisposableID
 (TODO)
 
-#### getDIDDocumentbyDID
-(TODO)
-#### verifyDID
-(TODO)
-#### getHashByDID
-(TODO)
-#### getDIDDocumentByHash
+#### proofDID
 (TODO)
 
-
+### Disposable ID Data and Consent Credentials
 
 #### generateDataVerifiableCredential
 (TODO)
@@ -82,13 +72,42 @@ Important note: A Disposable ID and coconut credential proof JSON document are n
 (TODO)
 #### createVerifiableCredentialsPackage
 (TODO)
+#### updateDataVerifiableCredentialStatus
+(TODO, can be an update of content, can be a delete)
+
+
+
+### Self-Isued Verifiable Credentials (per persona)
+
+#### createProfileVerifiableCredential
+(TODO)
+#### getProfileVerifiableCredential
+(TODO)
+#### updateProfileVerifiableCredential
+(TODO)
+
+### Externally Issued Verifiable Credentials (for public credentials)
+
+#### getVerifiableCredentialByDID
+(TODO, can return many)
+
+
+### Data Exchange via P2P Channels
+
+#### createDisposableDataExchangeChannel
+(TODO)
+#### closeDisposableDataExchangeChannel
+(TODO)
+#### reopenDisposableDataExchangeChannel
+(TODO)
+#### verifyDisposableIDViaDataExchangeChannel
+(TODO)
 #### shareVerifiableCredentialsPackageViaDataExchangeChannel
+(TODO)
+#### updateDataVerifiableCredentialViaDataExchangeChannel
 (TODO)
 #### deleteDataVerifiableCredentialViaDataExchangeChannel
 (TODO)
-#### updateDataVerifiableCredentialStatus
-(TODO)
-
 #### sendVerifiableCredentialRequestToExternalIssuerViaDataExchangeChannel
 (TODO)
 #### receiveVerifiableCredentialFromExternalIssuerViaDataExchangeChannel
@@ -96,12 +115,11 @@ Important note: A Disposable ID and coconut credential proof JSON document are n
 #### showVeriableCredentialViaDataExchangeChannel
 (TODO)
 
-#### provideKeysToCustodians
-(TODO)
+
+### Custodians
+(TODO: add to data exchange protocol)
 
 
 ## Barcode/markers
 (TODO Jari)
 
-## AI
-(TODO ?)
